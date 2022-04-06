@@ -56,7 +56,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Notes:
+                                        <td>Observações:
                                             <br>
                                             {{logstatus.notes}}
                                         </td>
@@ -79,14 +79,14 @@
                                 <th>Horário</th>
                                 <th>Data</th>
                                 <th>Departamento/Função</th>
-                                <th>Notes</th>
+                                <th>Observações</th>
                             </tr>
                         </thead>
                         {% for ws in ws_desc %}
                         <tbody>
                             <tr>
                                 <td>
-                                    {{ws.employee.employeeinfo_set.all.0.last_name}}, {{ws.employee.employeeinfo_set.all.0.first_name}}
+                                    {{ws.employee.employeeinfo_set.all.0.first_name}} {{ws.employee.employeeinfo_set.all.0.last_name}}
                                 </td>
                                 <td>
                                     {{ws.work_status}}

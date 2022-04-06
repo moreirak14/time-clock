@@ -30,7 +30,7 @@
             <form class="form-signin" method="POST" action="{% url 'register' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="inputName" class="sr-only">Username</label>
+                    <label for="inputName" class="sr-only">Usuário</label>
                     {{user.username}}
                 </div>
                 <div class="form-group">
@@ -66,8 +66,8 @@
                     {{user.phone_number}}
                 </div>
                 <center>
-                    <button class="btn btn-lg btn-primary" type="submit">Register User</button>
-                    <a href="{% url 'timeclockindex' %}" class="btn btn-lg btn-primary">Back</a>
+                    <button class="btn btn-lg btn-primary" type="submit">Registrar Usuário</button>
+                    <a href="{% url 'timeclockindex' %}" class="btn btn-lg btn-primary">Voltar</a>
                 </center>
             </form>
         </div>
