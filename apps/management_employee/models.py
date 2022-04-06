@@ -31,6 +31,9 @@ class Employee(models.Model):
     last_updated_on = models.DateTimeField(blank=True, null=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
 
+    # class Meta:
+    #     verbose_name_plural = "Funcionlario"
+
     def __str__(self):
         return "ID: %d Username: %s Password: %s" % (self.id, self.username, self.password)
 
