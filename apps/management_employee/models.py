@@ -12,7 +12,7 @@ class Emp(models.Model):
     last_updated_on = models.DateTimeField(blank=True, null=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
     first_name = models.CharField(max_length=40)
-    middle_name = models.CharField(max_length=40, blank=True, default='')
+    middle_name = models.CharField(max_length=40, blank=True, default="")
     last_name = models.CharField(max_length=40)
     phone_number = models.IntegerField(blank=True, null=True)
     created_on = models.DateTimeField(default=timezone.now)
@@ -35,21 +35,34 @@ class Employee(models.Model):
     #     verbose_name_plural = "Funcionlario"
 
     def __str__(self):
-        return "ID: %d Username: %s Password: %s" % (self.id, self.username, self.password)
+        return "ID: %d Username: %s Password: %s" % (
+            self.id,
+            self.username,
+            self.password,
+        )
 
 
 class EmployeeInfo(models.Model):
-    employee = models.ForeignKey('Employee', on_delete=models.CASCADE)
+    employee = models.ForeignKey("Employee", on_delete=models.CASCADE)
     first_name = models.CharField(max_length=40)
-    middle_name = models.CharField(max_length=40, blank=True, default='')
+    middle_name = models.CharField(max_length=40, blank=True, default="")
     last_name = models.CharField(max_length=40)
-    department = models.CharField(max_length=50, default='')
+    department = models.CharField(max_length=50, default="")
     phone_number = models.IntegerField(blank=True, null=True)
     created_on = models.DateTimeField(default=timezone.now)
     deleted_on = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return "ID: %d First Name: %s Middle Name: %s Last Name: %s Phone Number: %s" % (self.id, self.first_name, self.middle_name, self.last_name, self.phone_number)
+        return (
+            "ID: %d First Name: %s Middle Name: %s Last Name: %s Phone Number: %s"
+            % (
+                self.id,
+                self.first_name,
+                self.middle_name,
+                self.last_name,
+                self.phone_number,
+            )
+        )
 
 
 class Status(models.Model):
@@ -60,15 +73,20 @@ class Status(models.Model):
 
 
 class Work(models.Model):
-    employee = models.ForeignKey('Employee', on_delete=models.CASCADE)
+    employee = models.ForeignKey("Employee", on_delete=models.CASCADE)
     work_status = models.CharField(max_length=30)
-    notes = models.CharField(max_length=100, default='', blank=True)
+    notes = models.CharField(max_length=100, default="", blank=True)
     time = models.TimeField(default=timezone.localtime)
     date = models.DateField(default=date.today)
 
     def __str__(self):
         return "ID: %d Work Status: %s Notes: %s Time: %s Date: %s" % (
-        self.id, self.work_status, self.notes, self.time, self.date)
+            self.id,
+            self.work_status,
+            self.notes,
+            self.time,
+            self.date,
+        )
 
 
 class User(models.Model):
@@ -76,4 +94,4 @@ class User(models.Model):
     password = models.CharField(max_length=20)
 
     def __str__(self):
-        return 'username: {}, password: {}'.format(self.username, self.password)
+        return "username: {}, password: {}".format(self.username, self.password)

@@ -27,7 +27,7 @@
                     <tbody>
                         <tr>
                             <td class="text-left">
-                                Logged in as - {{userRef}}
+                                Usuário On-line - {{userRef}}
                             </td>
                             <td class="text-right">
                             <a href="{% url 'logout' %}" class="btn btn-md btn-primary">Sair</a>
@@ -55,15 +55,15 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Observações:
-                                            <br>
-                                            {{logstatus.notes}}
-                                        </td>
-                                    </tr>
+<!--                                    <tr>-->
+<!--                                        <td>Observações:-->
+<!--                                            <br>-->
+<!--                                            {{logstatus.notes}}-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
                                     <tr>
                                         <td> <br>
-                                            <button class="btn btn-sm btn-primary">Submit</button>
+                                            <button class="btn btn-sm btn-primary">Registrar</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -79,7 +79,7 @@
                                 <th>Horário</th>
                                 <th>Data</th>
                                 <th>Departamento/Função</th>
-                                <th>Observações</th>
+<!--                                <th>Observações</th>-->
                             </tr>
                         </thead>
                         {% for ws in ws_desc %}
@@ -100,9 +100,9 @@
                                 <td>
                                     {{ws.employee.employeeinfo_set.all.0.department}}
                                 </td>
-                                <td>
-                                    {{ws.notes}}
-                                </td>
+<!--                                <td>-->
+<!--                                    {{ws.notes}}-->
+<!--                                </td>-->
                             </tr>
                         </tbody>    
                         {% endfor %}
